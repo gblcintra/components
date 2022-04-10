@@ -4,8 +4,11 @@ import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import { BannerProvider } from './components/Context'
+
 import { ContentBannerProps, IBannerProps } from './types';
 import Banner from './components/banner';
+import SliderBanners from './components/SliderBanners';
 
 const defaultSettings: Settings = {
     arrows: true,
@@ -24,13 +27,9 @@ const BannerCountdown: FunctionComponent<IBannerProps> = ({
     contents
 }) => {
     return (
-        <>
-            <Slider {...sliderSettings} className="mainSlider">
-                {contents.map((banner, index) => (
-                    <Banner {...banner} key={index} />
-                ))}
-            </Slider>
-        </>
+        <BannerProvider contents={contents}>
+            <SliderBanners sliderSettings={sliderSettings}/>
+        </BannerProvider>
 
     );
 }

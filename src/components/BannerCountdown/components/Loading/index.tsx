@@ -1,12 +1,14 @@
 import React from 'react'
+import { classes } from '../../../../config/class'
 import './index.scss'
 
 const Loading = () => {
 
+  const baseClass = classes.baseG
   return (
-    <div className={`gbcintra-component--divLoader} `}>
+    <div className={`${baseClass}divLoader} `}>
       <svg
-        className={`gbcintra-component--svgLoader} `}
+        className={`${baseClass}svgLoader} `}
         viewBox="0 0 50 50"
         width="51px"
         height="50px"

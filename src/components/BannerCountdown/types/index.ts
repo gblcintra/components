@@ -1,5 +1,10 @@
 import { Settings } from 'react-slick';
 
+export interface IBannerProvider {
+    contents: ContentBannerProps[];
+    children:JSX.Element|JSX.Element[];
+}
+
 export interface ContentBannerProps {
     image: string;
     alt?: string;

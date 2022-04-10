@@ -9,7 +9,7 @@ const array: ContentBannerProps[] = [
     title: 'Google',
     countdown:{
       countdownUse:true,
-      dataInit:'09/04/2022',
+      dataInit:'10/04/2022',
       dataFinish:'09/04/2022 14:16',
       text:'testooo'
     }

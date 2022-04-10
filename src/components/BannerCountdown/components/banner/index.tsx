@@ -30,11 +30,15 @@ const Banner: FunctionComponent<ContentBannerProps> = ({
   useEffect(() => {
     setLoading(false);
   },[])
-  // const dataInitFormater = currentDate(countdown.dataInit);
+  const dataInitFormater = currentDate(countdown.dataInit);
   const dataFinishFormater = currentDate(countdown.dataFinish);
 
   const { secondsSTR, minutesSTR, hoursSTR, active } = useTimer(dataFinishFormater);
   
+  if(dataInitFormater<dataFinishFormater){
+    return null
+  }
+
   if (loading) {
     return (
       <div
